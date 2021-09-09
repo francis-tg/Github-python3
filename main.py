@@ -22,18 +22,10 @@ sum = 0
 if argv == ["-pull"]:
     print("Use to push data")
     try:
-        gitadd = subprocess.check_output("git add .")
-        print(gitadd)
         commit_msg = input("Entrer le message du commit >:")
-        
-        # Define the getopt parameters
-        """ opts, args = getopt.getopt(argv, 'push:pull:', ['foperand', 'soperand']) """
-        # Check if the options' length is 2 (can be enhanced)
-        """ if len(opts) == 0 and len(opts) > 2:
-        print ('usage: add.py -a <first_operand> -b <second_operand>')
-        else:
-        print(argv) """
-        
+        gitadd = subprocess.run("git add .") 
+        gitadd = subprocess.run(f"git commit -m "+commit_msg+"")
+        gitadd = subprocess.run("git pull")
 
     except getopt.GetoptError:
         # Print something useful
@@ -63,7 +55,7 @@ if argv == ["-first-upload"]:
         gitadd = subprocess.run("git add README.md", shell=True, check=True)
         print("[+]"+Fore.GREEN+" Le README.md a été bien ajouté...")
         commit_msg = input("Entrer le message du commit >:")
-        gitadd = subprocess.run(f"git commit -m '"+commit_msg+"'", shell=True, check=True)
+        gitadd = subprocess.run(f"git commit -m "+commit_msg+"", shell=True, check=True)
         print("[+]"+Fore.GREEN+" Le README.md a été bien ajouté...")
         gitadd = subprocess.run(f"git branch -M main", shell=True, check=True)
         repo_url= input("Entrer le lien de repository >:")
