@@ -44,7 +44,7 @@ if argv == ["-push"]:
         print ('usage: add.py -a <first_operand> -b <second_operand>')
         sys.exit(2)
 
-if argv == ["-first-upload"]:
+if argv == ["-init"]:
     print("Use to create respo")
     try:
         gitadd = subprocess.run("git init", shell=True, check=True)
