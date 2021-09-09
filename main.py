@@ -3,12 +3,13 @@ import sys
 import subprocess
 from colorama import init
 from colorama import Fore, Back, Style
+import os
 
-repo_url = 'https://github.com/francis-tg/Github-python3.git'
+""" repo_url = 'https://github.com/francis-tg/Github-python3.git'
 spliturl = repo_url.split(".")
 if spliturl[2] == "git":
     print('ok')
-
+ """
 
 
 init()
