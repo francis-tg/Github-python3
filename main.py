@@ -45,7 +45,7 @@ if argv == ["-push"]:
         commit_msg = input("Entrer le message du commit >:")
         gitadd = subprocess.run("git add .")
         gitadd = subprocess.run(f"git commit -m "+commit_msg+"")
-        gitadd = subprocess.run("push")
+        gitadd = subprocess.run("git push")
 
     except getopt.GetoptError:
         # Print something useful
